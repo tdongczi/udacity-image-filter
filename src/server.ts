@@ -41,15 +41,15 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
     try {
       // call filterImageFromURL(image_url) to filter the image
-      const filteredpath = await filterImageFromURL(image_url)
+      const filtered_image_path = await filterImageFromURL(image_url)
 
       // send the resulting file in the response
-      await res.status(200).sendFile(filteredpath, {}, (err) => {
+      await res.status(200).sendFile(filtered_image_path, {}, (err) => {
         if (err) { 
           return res.status(422).send(`Not able to process the image, please make sure image url is correct`);
         }
         // Deleting the used image file.
-        deleteLocalFiles([filteredpath])
+        deleteLocalFiles([filtered_image_path])
       })
     } catch (err) {
       res.status(422).send(`Not able to process the image, please make sure image url is correct`);
