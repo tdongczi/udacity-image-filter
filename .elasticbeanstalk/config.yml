@@ -1,0 +1,19 @@
+branch-defaults:
+  dev:
+    environment: udacity-image-filter-tdong-dev-dev
+deploy:
+  artifact: ./www/Archive.zip
+global:
+  application_name: udacity-image-filter-tdong-dev
+  branch: null
+  default_ec2_keyname: udacity_aws_ec2
+  default_platform: Node.js 14 running on 64bit Amazon Linux 2
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
